@@ -82,7 +82,7 @@ plt.savefig(path + '_fig/' + name + '_fl_visits.png', dpi = 1000, bbox_inches = 
 map = gdf_al.plot(column = 'quant', cmap = 'Blues', edgecolor = 'black', alpha = 0.7, figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'upper right', 'fontsize': '6'})
 gdf_al.apply(lambda x: map.annotate(s = x.ZIP, xy = x.geometry.centroid.coords[0], ha = 'center'), axis=1);
 ctx.add_basemap(ax = map, source = ctx.providers.Stamen.TonerLite)
-map.set_title('Medicare FFS Hospital Visits per Population over 65 2015-2018 by Zip Code in Alachua County, FL', fontdict = {'fontsize': 16}, loc = 'center')
+map.set_title('Medicare FFS Hospital Visits 2015-2018 by Zip Code in Alachua County, FL', fontdict = {'fontsize': 16}, loc = 'center')
 map.set_axis_off()
 map.annotate('', xy = (0.15, 0.1), xytext = (0.15, 0.0), arrowprops = dict(arrowstyle = 'simple'), fontsize = 10, xycoords= 'axes fraction')
 map.annotate('N', xy = (0.16, 0.01), xycoords = 'axes fraction', fontsize = 16)
