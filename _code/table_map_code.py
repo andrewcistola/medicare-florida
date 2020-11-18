@@ -71,11 +71,11 @@ gdf_al.info() # Get class, memory, and column info: names, data types, obs
 map = gdf_fl.plot(column = 'quant', cmap = 'Blues', figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'center left'})
 map.set_title('Medicare FFS Hospital Visits 2015-2018 by Zip Code in Florida', fontdict = {'fontsize': 16}, loc = 'center')
 map.set_axis_off()
-map.annotate('', xy = (0.5, 0.1), xytext = (0.5, 0.0), arrowprops = dict(arrowstyle = 'simple'), fontsize = 10, xycoords= 'axes fraction')
-map.annotate('N', xy = (0.51, 0.01), xycoords = 'axes fraction', fontsize = 16)
-map.annotate('Andrew S. Cistola, MPH', xy = (0.0, 0.15), xycoords = 'axes fraction', fontsize = 10)
-map.annotate(stamp, xy = (0.0, 0.1), xycoords = 'axes fraction', fontsize = 10)
-map.add_artist(AnchoredSizeBar(map.transData, 3, '300 km', loc = 'lower left'))
+map.annotate('', xy = (0.0, 0.1), xytext = (0.00, 0.0), arrowprops = dict(arrowstyle = 'simple'), fontsize = 10, xycoords= 'axes fraction')
+map.annotate('N', xy = (0.01, 0.01), xycoords = 'axes fraction', fontsize = 16)
+map.annotate('Andrew S. Cistola, MPH', xy = (0.05, 0.06), xycoords = 'axes fraction', fontsize = 10)
+map.annotate(stamp, xy = (0.05, 0.01), xycoords = 'axes fraction', fontsize = 10)
+map.add_artist(AnchoredSizeBar(map.transData, 20, '50 km', loc = 'lower right'))
 plt.savefig(path + '_fig/' + name + '_fl_visits.png', dpi = 1000, bbox_inches = 'tight')
 
 ### Create choropleth for AL
