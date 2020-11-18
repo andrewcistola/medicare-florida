@@ -68,7 +68,7 @@ gdf_al = gdf_al.filter(['quant', 'geometry', 'pop', 'ID', 'ZIP']) # Keep only se
 gdf_al.info() # Get class, memory, and column info: names, data types, obs
 
 ### Create choropleth for FL
-map = gdf_fl.plot(column = 'quant', cmap = 'Blues', figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'center left'})
+map = gdf_fl.plot(column = 'quant', cmap = 'YlGnBu', figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'center left'})
 map.set_title('Medicare FFS Hospital Visits 2015-2018 by Zip Code in Florida', fontdict = {'fontsize': 16}, loc = 'center')
 map.set_axis_off()
 map.annotate('', xy = (0.0, 0.1), xytext = (0.00, 0.0), arrowprops = dict(arrowstyle = 'simple'), fontsize = 10, xycoords= 'axes fraction')
@@ -78,7 +78,19 @@ map.annotate(stamp, xy = (0.05, 0.01), xycoords = 'axes fraction', fontsize = 10
 map.add_artist(AnchoredSizeBar(map.transData, 20, '50 km', loc = 'lower right'))
 plt.savefig(path + '_fig/' + name + '_fl_visits.png', dpi = 1000, bbox_inches = 'tight')
 
-### Create choropleth for AL
+### Create choropleth for FL with street overlay
+map = gdf_fl.plot(column = 'quant', cmap = 'BuGn', edgecolor = 'black', linewidth = 1, alpha = 0.7, figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'center left'})
+ctx.add_basemap(ax = map, source = ctx.providers.Stamen.TonerLite)
+map.set_title('Medicare FFS Hospital Visits 2015-2018 by Zip Code in Florida', fontdict = {'fontsize': 16}, loc = 'center')
+map.set_axis_off()
+map.annotate('', xy = (0.15, 0.1), xytext = (0.15, 0.0), arrowprops = dict(arrowstyle = 'simple'), fontsize = 10, xycoords= 'axes fraction')
+map.annotate('N', xy = (0.16, 0.01), xycoords = 'axes fraction', fontsize = 16)
+map.annotate('Andrew S. Cistola, MPH', xy = (0.2, 0.03), xycoords = 'axes fraction', fontsize = 10)
+map.annotate(stamp, xy = (0.2, 0.0), xycoords = 'axes fraction', fontsize = 10)
+map.add_artist(AnchoredSizeBar(map.transData, 20, '50 km', loc = 'lower right'))
+plt.savefig(path + '_fig/' + name + '_fl_street_visits.png', dpi = 1000, bbox_inches = 'tight')
+
+### Create choropleth for AL FL with street overlay
 map = gdf_al.plot(column = 'quant', cmap = 'Blues', edgecolor = 'black', alpha = 0.7, figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'upper right', 'fontsize': '6'})
 gdf_al.apply(lambda x: map.annotate(s = x.ZIP, xy = x.geometry.centroid.coords[0], ha = 'center'), axis=1);
 ctx.add_basemap(ax = map, source = ctx.providers.Stamen.TonerLite)
@@ -91,10 +103,9 @@ map.annotate(stamp, xy = (0.2, 0.0), xycoords = 'axes fraction', fontsize = 10)
 map.add_artist(AnchoredSizeBar(map.transData, 0.1, '10 km', loc = 'lower right'))
 plt.savefig(path + '_fig/' + name + '_al_visits.png', dpi = 1000, bbox_inches = 'tight')
 
-### Create choropleth for AL
-map = gdf_al.plot(column = 'pop', cmap = 'Blues', edgecolor = 'black', alpha = 0.7, figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'upper right', 'fontsize': '6'})
+### Create choropleth for AL with street overlay
+map = gdf_al.plot(column = 'pop', cmap = 'Blues', edgecolor = 'black', linewidth = 1, figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'upper right', 'fontsize': '6'})
 gdf_al.apply(lambda x: map.annotate(s = x.ZIP, xy = x.geometry.centroid.coords[0], ha = 'center'), axis=1);
-ctx.add_basemap(ax = map, source = ctx.providers.Stamen.TonerLite)
 map.set_title('Population over 65 2015-2018 by Zip Code in Alachua County, FL', fontdict = {'fontsize': 16}, loc = 'center')
 map.set_axis_off()
 map.annotate('', xy = (0.15, 0.1), xytext = (0.15, 0.0), arrowprops = dict(arrowstyle = 'simple'), fontsize = 10, xycoords= 'axes fraction')
@@ -115,3 +126,15 @@ df_al_ex = df_al_ex.drop(columns = ["ZCTA"]) # Drop Unwanted Columns
 df_al_ex = df_al_ex.set_index("ZIP") # Set column as index
 df_al_ex.to_csv(r'other/chacko_18-11-2020/_fig/ffs_al.csv') # Clean in excel and select variable
 df_al_ex.info() # Get class, memory, and column info: names, data types, obs
+
+### Create choropleth for FL with street overlay
+map = gdf_fl.plot(column = 'quant', cmap = 'BuGn', edgecolor = 'black', linewidth = 1, alpha = 0.7, figsize = (10, 10), scheme = 'equal_interval', k = 9, legend = True, legend_kwds={'title': 'Visits per Pop over 65', 'loc': 'center left'})
+ctx.add_basemap(ax = map, source = ctx.providers.Stamen.TonerLite)
+map.set_title('Medicare FFS Hospital Visits 2015-2018 by Zip Code in Florida', fontdict = {'fontsize': 16}, loc = 'center')
+map.set_axis_off()
+map.annotate('', xy = (0.15, 0.1), xytext = (0.15, 0.0), arrowprops = dict(arrowstyle = 'simple'), fontsize = 10, xycoords= 'axes fraction')
+map.annotate('N', xy = (0.16, 0.01), xycoords = 'axes fraction', fontsize = 16)
+map.annotate('Andrew S. Cistola, MPH', xy = (0.2, 0.03), xycoords = 'axes fraction', fontsize = 10)
+map.annotate(stamp, xy = (0.2, 0.0), xycoords = 'axes fraction', fontsize = 10)
+map.add_artist(AnchoredSizeBar(map.transData, 20, '50 km', loc = 'lower right'))
+plt.savefig(path + '_fig/' + name + '_fl_street_visits.png', dpi = 1000, bbox_inches = 'tight')
