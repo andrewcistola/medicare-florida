@@ -1,18 +1,42 @@
-# Development Repository for Andrew S Cistola, MPH (DrewC!)
-A repository containing projects under development.
+# Data Reqeust
+Data request from Lisa Chacko MD, MPH on 14 Nov 2020
 
 ## About this Repository
-This a private repository containing subrepos for current projects under development as well as templates for easy transfer to new repositories.
+Medicare FFS Hospital visits and population over 65 for Florida and Alachua County
+
+![](_fig/ffs_map_al_visits.png)<br>
+<br>
+![](_fig/ffs_map_al_pop.png)<br>
+<br>
+![](_fig/ffs_map_fl_visits.png)
+
+### Data Table
+`ffs_al.csv` is a ready to use table with information related to the request. 
+
+#### Variable Definitions
+ZIP = 5 digit Zip code in Alachua County, FL<br>
+POP_OVER_65 = Total population over 65 in Zip Code<br>
+POP_TOTAL = Total population in Zip Code<br>
+TOTAL_DAYS_OF_CARE = Total bed days from Medicare Part A/B beneficaries from all hopsitals for residents within that Zip Code<br>
+TOTAL_CHARGES = Total raw charges from Medicare Part A/B beneficaries from all hopsitals for residents within that Zip Code<br>
+TOTAL_CASES = Total hospital visits from Medicare Part A/B beneficaries from all hopsitals for residents within that Zip Code<br>
+DAYS_per 65 = TOTAL_DAYS_OF_CARE / POP_OVER_65<br>
+CHARGES_per 65 = TOTAL_CHARGES / POP_OVER_65<br>
+VISTIS_per 65 = TOTAL_CASES/ POP_OVER_65<br>
+
+#### Notes
+- Population data was accessed from the 2018 American Community Survey. https://data.census.gov/cedsci/?g=0100000US&tid=ACSDP1Y2018.DP05<br>
+- Hospitalization data was accessed from the 2020 CMS Hospital Compare, Health Services Area File. https://data.cms.gov/Medicare-Inpatient/Hospital-Service-Area-File-2018/sgw2-6vb4<br>
+- The open source Healthy Neighborhoods Repository was used for this project. For Raw data files, documentation, and code visit https://github.com/andrewcistola/healthy-neighborhoods<br>
 
 ## Repository Contents:
-`_archive` Old files from previous projects
-`toolbox` Collected code, installers, or templates
-`allocativ` Development projects for Fractureproof, Healthy Neighborhoods Project, and Python for Healthcare
-`neville` Research for PhD dissertation
-`.vscode` Settings used for VS Code IDE
-`LICENSE` Generic MIT licenses for open source projects from DrewC!
-`.gitattributes` File extensions marked for GH large file storage
-`environment.yml` Conda environment with dependencies for use in development projects
+`ffs_al.csv` Ready to use file<br>
+`_data` Data used for the request<br>
+`_code` Code used for the request<br>
+`_fig` Figures made in the request<br>
+`LICENSE` Generic MIT licenses for open source projects from DrewC!<br>
+`.gitattributes` File extensions marked for GH large file storage<br>
+`environment.yml` Conda environment with dependencies for use in development projects<br>
 
 ## Repository Structure
 The repository uses the following file organization.
