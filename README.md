@@ -4,6 +4,8 @@ Data request from Lisa Chacko MD, MPH on 14 Nov 2020
 ## About this Repository
 Medicare FFS Hospital visits and population over 65 for Florida and Alachua County
 
+![](_fig/adv_map_al_adv.png)<br>
+<br>
 ![](_fig/ffs_map_al_visits.png)<br>
 <br>
 ![](_fig/ffs_map_al_pop.png)<br>
