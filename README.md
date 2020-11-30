@@ -1,14 +1,14 @@
-# Data Reqeust
-Data request from Lisa Chacko MD, MPH on 14 Nov 2020
+# Project Luna
+Community driven, value based primary care for Medicare beneficiaries in Gainesville, FL
 
 ## About this Repository
-Medicare FFS Hospital visits and population over 65 for Florida and Alachua County
+This repository contains data, visuals, and documents to evaluate Opportunities for a Community driven, value based primary care clinic for Medicare patients using Direct Contracting payment models. This could sound weird, but also on point (think of Luna Lovegood).  
 
-![](_fig/adv_map_al_adv.png)<br>
-<br>
 ![](_fig/ffs_map_al_visits.png)<br>
 <br>
 ![](_fig/ffs_map_al_pop.png)<br>
+<br>
+![](_fig/adv_map_al_adv.png)<br>
 <br>
 ![](_fig/ffs_map_fl_visits.png)
 
@@ -33,6 +33,7 @@ VISTIS_per 65 = TOTAL_CASES/ POP_OVER_65<br>
 
 ## Repository Contents:
 `ffs_al.csv` Ready to use file<br>
+`Income Statement` Draft of income statement for possible clinic<br>
 `_data` Data used for the request<br>
 `_code` Code used for the request<br>
 `_fig` Figures made in the request<br>
