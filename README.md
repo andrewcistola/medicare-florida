@@ -33,7 +33,7 @@ VISTIS_per 65 = TOTAL_CASES/ POP_OVER_65<br>
 
 ## Repository Contents:
 `ffs_al.csv` Ready to use file<br>
-`Income Statement` Draft of income statement for possible clinic<br>
+`Income Statement.xlsx` Draft of income statement for possible clinic<br>
 `_data` Data used for the request<br>
 `_code` Code used for the request<br>
 `_fig` Figures made in the request<br>
