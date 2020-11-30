@@ -138,3 +138,6 @@ map.annotate('Andrew S. Cistola, MPH', xy = (0.2, 0.03), xycoords = 'axes fracti
 map.annotate(stamp, xy = (0.2, 0.0), xycoords = 'axes fraction', fontsize = 10)
 map.add_artist(AnchoredSizeBar(map.transData, 20, '50 km', loc = 'lower right'))
 plt.savefig(path + '_fig/' + name + '_fl_street_visits.png', dpi = 1000, bbox_inches = 'tight')
+
+
+
