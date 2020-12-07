@@ -1,6 +1,8 @@
 # Project Luna
 Community driven, value based primary care for Medicare beneficiaries in Gainesville, FL
 
+https://youtu.be/lje5HQw7pR4
+
 ## About this Repository
 This repository contains data, visuals, and documents to evaluate Opportunities for a Community driven, value based primary care clinic for Medicare patients using Direct Contracting payment models. This could sound weird, but also on point (think of Luna Lovegood).  
 
